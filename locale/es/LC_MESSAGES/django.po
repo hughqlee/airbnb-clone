@@ -56,7 +56,7 @@ msgstr "Iniciar Sesión"
 
 #: templates/partials/nav.html:19
 msgid "Sign up"
-msgstr ""
+msgstr "Crear Cuenta"
 
 #: templates/rooms/room_detail.html:32
 msgid "Save to Favourites"
