@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("DJANGO_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get("DEBUG"))
+DEBUG = True
 
 ALLOWED_HOSTS = [".elasticbeanstalk.com", "localhost"]
 
@@ -88,7 +88,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if DEBUG:
+if DEBUG is False:
 
     DATABASES = {
         "default": {
@@ -101,10 +101,10 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "HOST": os.environ.get("RDS_HOST"),
-            "NAME": os.environ.get("RDS_NAME"),
-            "USER": os.environ.get("RDS_USER"),
-            "PASSWORD": os.environ.get("RDS_PASSWORD"),
+            "HOST": "airbnb-clone.cztkohc8rcqj.ap-northeast-2.rds.amazonaws.com",
+            "NAME": "postgres",
+            "USER": "postgres",
+            "PASSWORD": "dreamweaver2",
             "PORT": "5432",
         }
     }
